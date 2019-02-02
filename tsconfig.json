@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable","es2015","es2016", "es2017", "esnext"],
+    "allowJs": false,
+    "checkJs": false,
+    "jsx": "react",
+    "noEmitOnError": false,
+    "moduleResolution": "node",
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": false,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": false,
+    "declaration": false
+  },
+  "files":["./src/client/main.tsx"],
+  "include":["./src"],
+  "exclude": ["node_modules","build"]
+}

@@ -1,0 +1,17 @@
+.inline {
+  width: 258px;
+  height: 192px;
+  background-image: url(octocat_setup.png);
+}
+
+.copy {
+  width: 356px;
+  height: 192px;
+  background-image: url(octocat_fork.png);
+}
+
+.App-logo {
+  background: url(logo.svg);
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
