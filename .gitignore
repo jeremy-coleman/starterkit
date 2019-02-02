@@ -5,8 +5,10 @@
 node_modules
 _old
 # production
+unused
 /build
 zz
+dist
 # misc
 .DS_Store
 npm-debug.log*
