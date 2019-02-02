@@ -5,6 +5,7 @@
 node_modules
 _old
 # production
+unused
 /build
 zz
 dist
