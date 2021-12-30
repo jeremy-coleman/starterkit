@@ -17,30 +17,35 @@ const b = watchify(
     extensions: [".ts", ".tsx", ".js", ".jsx"],
     cache: {},
     packageCache: {},
-    debug: false,
-    sourceMaps: false,
-    fullPaths: false,
+    debug: true,
+    //sourceMaps: false,
+    fullPaths: true,
     plugin: [[hmr, { disableHostCheck: true }]],
+    // plugin: [
+    //   require("./hmr")
+    // ],
     transform: [
-      [
-        babelify.configure({
-          extensions: [".ts", ".tsx", ".js", ".jsx"],
-          presets: [["@babel/preset-typescript"], ["@babel/preset-react"]],
-          plugins: [
-            "react-hot-loader/babel",
-            ["@babel/plugin-proposal-decorators", { legacy: true }],
-            ["@babel/plugin-proposal-class-properties", { loose: true }],
-            ["@babel/plugin-transform-modules-commonjs"],
-            [
-              "module-resolver",
-              {
-                root: ["./src"]
-              }
-            ]
-          ],
-          sourceMaps: false
-        })
-      ]
+      require("./tsify"),
+      require("./sucrasify")
+      // [
+      //   babelify.configure({
+      //     extensions: [".ts", ".tsx", ".js", ".jsx"],
+      //     presets: [["@babel/preset-typescript"], ["@babel/preset-react"]],
+      //     plugins: [
+      //       "react-hot-loader/babel",
+      //       ["@babel/plugin-proposal-decorators", { legacy: true }],
+      //       ["@babel/plugin-proposal-class-properties", { loose: true }],
+      //       ["@babel/plugin-transform-modules-commonjs"],
+      //       [
+      //         "module-resolver",
+      //         {
+      //           root: ["./src"]
+      //         }
+      //       ]
+      //     ],
+      //     sourceMaps: false
+      //   })
+      // ]
     ]
   })
 )

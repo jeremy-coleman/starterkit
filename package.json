@@ -28,6 +28,7 @@
     "react-hot-loader": "^4.13.0"
   },
   "devDependencies": {
+    "livereactload":"4.0.0-beta.2",
     "sucrase":"3.20.3",
     "gulp-postcss":"9.0.1",
     "postcss-import":"14.0.2",
@@ -59,7 +60,9 @@
     "cssify": "^1.0.3",
     "dotenv": "^10.0.0",
     "electron": "^16.0.5",
+    "ws":"8.4.0",
     "electron-devtools-installer": "^3.2.0",
+    "kolorist":"1.5.1",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-rename": "^2.0.0",
