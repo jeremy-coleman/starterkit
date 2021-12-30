@@ -1,9 +1,11 @@
-require('dotenv').config()
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import * as url from "url";
 
 const isDev = true
+
+//@ts-ignore
+process.env.ELECTRON_DISABLE_SECURITY_WARNINGS=true
 
 let mainWindow: Electron.BrowserWindow;
 
@@ -11,8 +13,8 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     webPreferences: {
       webSecurity: false,
-      nodeIntegrationInWorker: true,
-      plugins: true
+      //nodeIntegrationInWorker: true,
+      //plugins: true
     },
     height: 600,
     width: 800
@@ -30,10 +32,10 @@ function createWindow() {
   mainWindow.webContents.openDevTools();
 
 
-  if (isDev) {
-    const {default: installExtension, MOBX_DEVTOOLS} = require("electron-devtools-installer");
-    installExtension(MOBX_DEVTOOLS);
-  }
+  // if (isDev) {
+  //   const {default: installExtension, MOBX_DEVTOOLS} = require("electron-devtools-installer");
+  //   installExtension(MOBX_DEVTOOLS);
+  // }
 
   mainWindow.on("closed", () => {
     mainWindow = null;

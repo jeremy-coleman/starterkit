@@ -1,20 +1,25 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { hot } from "react-hot-loader"
+import * as React from "react"
+import * as ReactDOM from "react-dom"
 
-import App from './components/App';
+import {App} from "./components/App"
 
-import {Provider} from 'mobx-react'
-import {actionStore} from './components/store'
+import { Provider } from "mobx-react"
+import { actionStore } from "./components/store"
 
-import './glob.css'
+let HotApp = hot(module)(App)
+//import "./glob.css"
 
-let ello = document.getElementById('root')
 
 ReactDOM.render(
-    <Provider actionStore={actionStore}>
-            <App/>
-    </Provider>, ello
-);
+  <Provider actionStore={actionStore}>
+    <HotApp />
+  </Provider>,
+  document.getElementById("root")
+)
 
 //@ts-ignore
-if(module.hot){module.hot.accept()}
+if (module.hot) {
+  //@ts-ignore
+  module.hot.accept()
+}

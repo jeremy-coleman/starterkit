@@ -1,20 +1,11 @@
-//0 kb dev overhead
-//123kb vs 190.9kb for prod
+import { observable } from "mobx"
 
-
-import {action, observable, computed} from 'mobx'
-
-class ActionTest {
-  @observable buttonMsg = 'hi'
-
-  @computed get instructionMsg () {
-    return this.buttonMsg === 'hi' ? 'click to say bye' : 'click to say hi';
+export let actionStore = observable({
+  buttonMsg: "hi",
+  get instructionMsg() {
+    return actionStore.buttonMsg === "hi" ? "click to say bye" : "click to say hi"
+  },
+  sayAloha() {
+    return actionStore.buttonMsg == "hi" ? (actionStore.buttonMsg = "bye") : (actionStore.buttonMsg = "hi")
   }
-
-  @action sayAloha = () => {
-    return this.buttonMsg == 'hi' ? this.buttonMsg = 'bye' : this.buttonMsg = 'hi';
-  }
-
-}
-
-export let actionStore = new ActionTest()
+})
